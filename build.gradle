@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'dev.arkav'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'dev.arkav:open-oryx:1.0.0'
+    compile 'org.reflections:reflections:0.9.11'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
